@@ -1,0 +1,26 @@
+01- node -v (>18.12)
+02- npm -v (>8.19)
+03- npm i -D typescript
+04- npx tsc --init | no arquivo tsconfig.json alterar es2016 para es2020
+	04.1- npm i tsx -D (automatiza o processo de compilar o código e atualizar, sem a necessidade de desligar e ligar o servidor)
+05- npm i fastify
+06- cria-se a pasta /src e dentro dela o arquivo server.ts
+	06.1- import Fastify from 'fastify';
+	06.2- async function bootstrap() {
+		const fastify = Fastify({
+			logger: true,
+		})
+	     }
+	     bootstrap();
+07- npm i prisma -D
+08- npm i @prisma/client
+09- npx prisma init --datasource-provider SQLite
+	09.1- será gerada a pasta prisma e dentro dela o arquivo schema.prisma (é onde ficarão armazenados os códigos de cada tabela a ser criada)
+	09.2- também será criado o arquiv .env (onde são armazenadas variáveis de ambiente, que mudam de acordo com a aplicação)
+	09.3- para melhor visualizar arquivos de sql gerados pelo prisma, recomenda-se a utilização da extensão do VSCode "Prisma"
+	09.4- em settings.json criar a opção "[prisma]" = { "editor.formatOnSave": true },
+10- npx prisma migrate dev > nome da migration
+	10.1- este comando ira executar alterações no arquivo schema.prisma e irá criar/atualizar o arquivo dentro da pasta /migrations em /prisma
+11- npx prisma studio
+12- npm i prisma-erd-generator @mermaid-js/mermaid-cli -D //// generator erd { provider = "prisma-erd-generator" }
+13- npx prisma generate

@@ -1,0 +1,2 @@
+01- npx create-next-app@latest --use-npm
+02- 
